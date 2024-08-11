@@ -2,6 +2,8 @@
 ## Description
 A DevSecOps to establish a local root CA, and manage a local PKIX.
 
+## Requirements
+Only OpenSSL is required. The scripts will attempt to install it / update it.
 ## Features
   1. Create the local PKIX's needed folders and files, configure OpenSSL to use them.
   2. Create the CA's private RSA key, the CSR, and the certificate.

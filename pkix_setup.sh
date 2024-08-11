@@ -18,6 +18,10 @@ initialize(){
 	echo 00 > crlnumber
 	echo "Done. The evinronment is ready"
         echo -e "\n--------------------------------------------------------------------\n" 
+	echo "Creating revokation list..."	
+	# Generating root self-signed certificate
+	gen_root_cert	
+	openssl ca -config openssl.cnf -gencrl -out crl/ca-crl.pem
 }
 
 # A function to generate root self-signed certs
@@ -69,8 +73,6 @@ main(){
 	# Initializing
 	initialize $name
 
-	# Generating root self-signed certificate
-	gen_root_cert	
 	echo "Users must now deliver their CSR to your csr/. From there, you can sign them."
 	echo "Scrip ends here."
 }

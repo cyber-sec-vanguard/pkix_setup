@@ -1,3 +1,4 @@
+#!/bin/bash
 # Initializing directories, the config file, the access controls, the DB, and the serials
 initialize(){
 	echo "Creating directories"

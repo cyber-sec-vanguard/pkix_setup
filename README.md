@@ -8,6 +8,12 @@ Only OpenSSL is required. The scripts will attempt to install it / update it.
   1. Create the local PKIX's needed folders and files, configure OpenSSL to use them.
   2. Create the CA's private RSA key, the CSR, and the certificate.
   3. Look for CSRs in the CSR folder, sign them, and publish them to the local certs folder.
+  4. Verify certs.
+  5. Print out certs
+
+# How to use
+Firstly, run `pkix_setup.sh`.
+Secondly, run `cert_sign.sh`.
 
 # Documentation
 ## Directories

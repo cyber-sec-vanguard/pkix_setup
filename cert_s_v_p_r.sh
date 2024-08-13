@@ -30,7 +30,6 @@ revoke(){
         ls certs
         read cert
 	openssl ca -config openssl.cnf -revoke certs/$cert
-	rm certs/$cert
 	echo -e "Done.\nRefreching CRL"
 	openssl ca -config openssl.cnf -gencrl -out crl/ca-crl.pem
 	echo "Want to check the CRL? (yes/no)"

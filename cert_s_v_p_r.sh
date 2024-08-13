@@ -15,7 +15,10 @@ verify(){
 	echo "Enter the CA's certificate's name"
 	ls certs
 	read ca
-	openssl verify -CAfile certs/$ca certs/$cert
+	echo "Enter the CA's CRL's name"
+        ls crl
+        read crl
+	openssl verify -crl_check -CRLfile crl/$crl -CAfile certs/$ca certs/$cert
 }
 
 printout(){

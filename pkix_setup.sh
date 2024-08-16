@@ -94,7 +94,7 @@ gen_root_cert(){
 
 	echo "Now, we will create a self-signed cert for our CA, in x509 format (the standardized), that lasts 10 years, with SHA3 256 hash function. This will use your privte key, so it will prompt you for the passphrase"
 	
-	sudo openssl req -config openssl.cnf -key private/$key -new -x509 -days 3650 -sha3-256 -out certs/ca.pem
+	sudo openssl req -config openssl.cnf -key private/$key -new -x509 -days 3650 -sha3-256 -extensions v3_ca -out certs/ca.pem
 	sudo chmod 444 certs/ca.pem
 	
 	echo "Cert creation: DONE. The cert is now accessible by anyone to read. This way, they can verify your public key, and use it to verify signatures"

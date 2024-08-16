@@ -5,7 +5,9 @@ sign(){
         echo "Enter the certificate name"
 	ls csr
 	read cert
-	openssl ca -config openssl.cnf -notext -md sha3-256 -in csr/$cert -out certs/$cert
+	echo "Add extensions"
+	read ext
+	openssl ca -config openssl.cnf -notext -md sha3-256 -extensions $ext -in csr/$cert -out certs/$cert
 }
 
 verify(){
@@ -51,30 +53,40 @@ revoke(){
 main(){
 	echo "------------------------------Welcome!------------------------------"
         echo "This script will help you establish and run your local root Certificate Authority"
-        echo -e "\n--------------------------------------------------------------------\n"
+
+	echo -e "\n--------------------------------------------------------------------\n"
+
 	echo "Make sure to run this script in the PKIX directory. Proceed? (yes/no)"
 	read choice
         while : ; do
-                if [[ $choice != "no" && $choice != "yes" ]] ; then
+                if [[ $choice != "no" && $choice != "yes" ]] ; then # Invalid input, retrying
                         echo "Please, enter either 'yes', or 'no'. Keep it simple"
                         read choice
-                elif [[ $choice = "no" ]] ; then
+
+		elif [[ $choice = "no" ]] ; then # Wrong directory, Exiting..
+			echo "Wrong directory, exiting .."
                         exit 0
-		else
+
+		else # right dir, continuing
 			break
                 fi
         done
+
         while : ; do
 		echo -e "Greate! Now select an option\n0. Exit.\n1. Sign a certificate.\n2. Verify a certification\n3. Print out a certificate.\n4. Revoke a certificate."
 		read choice
 		if [[ $choice = 0 ]] ; then
         		exit 0
-        	elif [[ $choice = 1 ]] ; then
+        
+		elif [[ $choice = 1 ]] ; then
 			sign
+	
 		elif [[ $choice = 2 ]] ; then
 			verify
+	
 		elif [[ $choice = 3 ]] ; then
 			printout
+	
 		elif [[ $choice = 4 ]] ; then
 			revoke
 		else

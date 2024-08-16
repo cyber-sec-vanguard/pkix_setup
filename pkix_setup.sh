@@ -86,8 +86,7 @@ gen_root_cert(){
 	echo "WARNING: Once it is set, you cannot change it."
 	echo "NOTE: the crl is currently named 'ca-crl.pem', located in crl/"
 	read crldp
-	sed -i "/[ v3_ca ]/a\\crlDistributionPoints = URI:$crldp"
-	
+	sudo sed -i "/\[ v3_ca \]/a\crlDistributionPoints = URI:https://crl.qsecurity.com/ca-crl.pem" openssl.cnf	
 	echo "Setting CRL Distribution Point: DONE"
 
 	echo -e "\n--------------------------------------------------------------------\n"

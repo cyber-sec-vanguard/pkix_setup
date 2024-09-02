@@ -1,6 +1,7 @@
 # pkix_setup
 #### Note
-I shall revise this project.
+I shall revise this project.\
+My focus now should shift from practicing with PKI, to making a dependable PKIX building system. Will this be easy? I don't know. Do I want to do it? Absolutely.
 ## Description
 A DevSecOps to establish a local root CA, and manage a local PKIX V2. To enable V3, you'll need to set some extensions and manage them yourself. You can always edit this code to support your extensions.\
 I did my best to comply with Mozilla's modern recommendation regarding the server side. These include (1) using Elliptic Curve Digital Signature Algorithm (ECDSA) for signing the certificate, and thus the root CA uses an ECDSA, with the P-256 curve; and (2) the certificates should not last longer than 90 days. Some claim that this curve, P-256, is NSA backdoored. However, this claim is but a claim.\

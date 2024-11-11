@@ -45,7 +45,7 @@ csr(){
 		if [[ $choice = "-1" ]] ; then
 			echo "Exiting .."
 			return 0
-		elif [[ $choice > i ]] ; then # Bash allows you to sum integers with 
+		elif [[ $choice > $i ]] ; then # Bash allows you to sum integers with 
 									  # strings :)
 			printf "Invalid choice. Try again :: "
 		else
@@ -72,7 +72,7 @@ sign(){
 		if [[ $choice = "-1" ]] ; then
 			echo "Exiting .."
 			return 0
-		elif [[ $choice > i ]] ; then # Bash allows you to sum integers with 
+		elif [[ $choice > $i ]] ; then # Bash allows you to sum integers with 
 									  # strings :)
 			printf "Invalid choice. Try again :: "
 		else
@@ -104,7 +104,7 @@ verify(){
 		if [[ $choice = "-1" ]] ; then
 			echo "Exiting .."
 			return 0
-		elif [[ $choice > i ]] ; then # Bash allows you to sum integers with 
+		elif [[ $choice > $i ]] ; then # Bash allows you to sum integers with 
 									  # strings :)
 			echo "Invalid choice. Try again"
 		else
@@ -128,7 +128,7 @@ printout(){
 		if [[ $choice = "-1" ]] ; then
 			echo "Exiting .."
 			return 0
-		elif [[ $choice > i ]] ; then # Bash allows you to sum integers with 
+		elif [[ $choice > $i ]] ; then # Bash allows you to sum integers with 
 									  # strings :)
 			echo "Invalid choice. Try again"
 		else
@@ -153,7 +153,7 @@ revoke(){
 		if [[ $choice = "-1" ]] ; then
 			echo "Exiting .."
 			return 0
-		elif [[ $choice > i ]] ; then # Bash allows you to sum integers with 
+		elif [[ $choice > $i ]] ; then # Bash allows you to sum integers with 
 									  # strings :)
 			echo "Invalid choice. Try again"
 		else

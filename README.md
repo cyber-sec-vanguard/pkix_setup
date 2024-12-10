@@ -1,4 +1,8 @@
 # pkix_setup
+
+# NOTE
+This project is being reworked on. See [AutoSignSSL](https://github.com/cyber-sec-vanguard/autosignssl).
+
 #### Note
 I shall revise this project.\
 My focus now should shift from practicing with PKI, to making a dependable PKIX building system. Will this be easy? I don't know. Do I want to do it? Absolutely.
